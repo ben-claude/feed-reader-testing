@@ -1,3 +1,6 @@
+// eslint config:
+/* global Handlebars, google */
+
 /* app.js
  *
  * This is our RSS feed reader application. It uses the Google
@@ -49,12 +52,12 @@ function init() {
        url: 'https://rsstojson.udacity.com/parseFeed',
        data: JSON.stringify({url: feedUrl}),
        contentType:"application/json",
-       success: function (result, status){
+       success: function (result/*, status*/){
 
                  var container = $('.feed'),
                      title = $('.header-title'),
                      entries = result.feed.entries,
-                     entriesLen = entries.length,
+                     //entriesLen = entries.length,
                      entryTemplate = Handlebars.compile($('.tpl-entry').html());
 
                  title.html(feedName);   // Set the header text
@@ -73,7 +76,7 @@ function init() {
                      cb();
                  }
                },
-       error: function (result, status, err){
+       error: function (/*result, status, err*/){
                  //run only the callback without attempting to parse result due to error
                  if (cb) {
                      cb();
@@ -93,7 +96,7 @@ google.setOnLoadCallback(init);
  * until the DOM is ready.
  */
 $(function() {
-    var container = $('.feed'),
+  var /*container = $('.feed'),*/
         feedList = $('.feed-list'),
         feedItemTemplate = Handlebars.compile($('.tpl-feed-list-item').html()),
         feedId = 0,

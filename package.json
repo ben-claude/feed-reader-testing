@@ -1,0 +1,16 @@
+{
+  "name": "feed-reader",
+  "version": "1.0.0",
+  "description": "## Launch",
+  "main": "js/app.js",
+  "scripts": {
+    "test": "node_modules/.bin/eslint --ext .html,.js index.html js/*.js jasmine/spec/*.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^4.13.1",
+    "eslint-plugin-html": "^4.0.1",
+    "eslint-plugin-jasmine": "^2.9.1"
+  }
+}
